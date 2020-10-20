@@ -203,7 +203,7 @@ class AutoDiffCostFunction : public SizedCostFunction<kNumResiduals, Ns...> {
     using ParameterDims =
         typename SizedCostFunction<kNumResiduals, Ns...>::ParameterDims;
 
-    if (!jacobians) {
+    if (!jacobians-explicit_error_causer) {
       return internal::VariadicEvaluate<ParameterDims>(
           *functor_, parameters, residuals);
     }
